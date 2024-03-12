@@ -1,0 +1,15 @@
+EX3. 
+docker pull mysql:latest
+docker run --name MySqlDB -e MYSQL_ROOT_PASSWORD=password01! -e MYSQL_DATABASE=company -e MYSQL_USER=user1 -e MYSQL_PASSWORD=password02! -d mysql:latest
+docker exec -i container_id mysql -uuser1 -ppassword02! company < C:/Downloads/company.sql
+A dat eroare de Syntaxa ERROR 1366 (HY000) at line 12: Incorrect integer value: 'Consulting' for column 'department' at row 41
+
+select avg(salary)
+from employees e, departments d
+where e.department = d.department_id
+and d.department_name = "Sales"
+
+SELECT d.department_name, AVG(e.salary) AS avg_salary
+FROM employees e
+JOIN departments d ON e.department = d.department_id
+GROUP BY d.department_name;
